@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Rooted Impact Consulting — Design System entry point
+   Consumers link this one file. It is a manifest of @import lines only.
+   Load order: fonts → tokens → base element styles.
+   "It's all transformation."
+   ========================================================================== */
+
+@import url('tokens/fonts.css');
+@import url('tokens/colors.css');
+@import url('tokens/typography.css');
+@import url('tokens/spacing.css');
+@import url('tokens/effects.css');
+@import url('tokens/base.css');

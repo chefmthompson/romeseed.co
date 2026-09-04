@@ -1,0 +1,10 @@
+{
+  // Worker name MUST match the name in the Cloudflare dashboard or the build fails.
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "romeseed-website",
+  "compatibility_date": "2026-08-30",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

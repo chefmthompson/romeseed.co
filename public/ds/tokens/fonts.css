@@ -1,0 +1,10 @@
+/* ==========================================================================
+   Rooted Impact Consulting — Webfonts
+   Two typefaces, two roles (never interchange):
+     Montserrat — headlines, labels, uppercase display, wordmark, pull quotes
+     Open Sans  — body, proposal/newsletter/email text, captions, long reading
+   Both are open-licensed (Montserrat: SIL OFL, Open Sans: Apache 2.0) and are
+   the brand's real typefaces — loaded here from the Google Fonts CDN.
+   ========================================================================== */
+
+@import url('/assets/fonts.css');

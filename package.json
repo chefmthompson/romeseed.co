@@ -1,0 +1,14 @@
+{
+  "name": "romeseed-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "ROME Seed Co. — static marketing site on Cloudflare Workers",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "node tools/check.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

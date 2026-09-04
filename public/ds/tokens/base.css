@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Rooted Impact Consulting — Base element styles
+   Sensible resets + brand defaults so raw HTML (newsletters, blog posts,
+   proposal bodies) inherits the brand without extra classes.
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-body);
+  background: var(--surface-canvas);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headlines: Montserrat, Deep Teal, tight leading */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-heading);
+  line-height: var(--lh-heading);
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-h1); font-weight: var(--fw-extrabold); letter-spacing: var(--ls-tight); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-semibold); }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-bold); }
+h4 { font-size: var(--fs-h4); font-weight: var(--fw-semibold); }
+
+p { margin: 0 0 1em; text-wrap: pretty; }
+
+/* Links: Rich Blue-Green → Vibrant Aqua on hover (define defaults so
+   editor-added links never fall back to browser blue). */
+a { color: var(--text-link); text-decoration: none; transition: color var(--dur-fast) var(--ease-standard); }
+a:hover { color: var(--text-link-hover); }
+
+strong, b { font-weight: var(--fw-semibold); }
+em, i { font-style: italic; }
+
+img { max-width: 100%; display: block; }
+
+hr {
+  border: none;
+  height: var(--border-accent);
+  background: var(--ric-aqua);
+  border-radius: 2px;
+  margin: var(--space-34) 0;
+}
+
+/* Editorial pull quote via <blockquote> */
+blockquote {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-style: italic;
+  color: var(--text-heading);
+  border-left: var(--border-left-accent) solid var(--ric-aqua);
+  padding-left: var(--space-20);
+  margin: var(--space-26) 0;
+}
+
+/* Selection + focus */
+::selection { background: var(--ric-aqua); color: var(--ric-white); }
+:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; border-radius: 4px; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

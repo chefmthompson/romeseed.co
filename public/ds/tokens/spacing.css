@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Rooted Impact Consulting — Spacing & Layout
+   Section rhythm is generous (~110px vertical on desktop). Content max-width
+   ~1160px. Grid gaps run on a soft 4/6/10/14/20 progression rather than a
+   strict 8px grid, matching the redesign source.
+   ========================================================================== */
+
+:root {
+  /* --- Spacing scale ---------------------------------------------------- */
+  --space-2:   2px;
+  --space-4:   4px;
+  --space-6:   6px;
+  --space-8:   8px;
+  --space-10:  10px;
+  --space-12:  12px;
+  --space-14:  14px;
+  --space-18:  18px;
+  --space-20:  20px;
+  --space-26:  26px;
+  --space-34:  34px;
+  --space-44:  44px;
+  --space-56:  56px;
+  --space-70:  70px;
+  --space-110: 110px;
+
+  /* --- Section & container ---------------------------------------------- */
+  --section-y:       110px;   /* desktop vertical section padding */
+  --section-y-sm:    76px;    /* mobile */
+  --container-max:   1160px;
+  --container-wide:  1240px;
+  --container-pad:   28px;
+
+  /* --- Grid gaps -------------------------------------------------------- */
+  --gap-card:  22px;   /* card grids */
+  --gap-tight: 14px;
+  --gap-wide:  70px;   /* two-column split (copy + media) */
+}
