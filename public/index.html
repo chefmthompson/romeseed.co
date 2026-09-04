@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROME Seed Co. | Hemp Artisan Pasta — Made in Italy</title>
+<meta name="description" content="Regenerative seed-powered Italian pasta. Sicilian durum wheat and organic hemp seed flour, bronze-extruded and slow-dried in Italy. Seed-Powered. Chef-Crafted. Purpose-Driven.">
+<link rel="canonical" href="https://romeseed.co/">
+<meta name="theme-color" content="#2C4C34">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ROME Seed Co.">
+<meta property="og:url" content="https://romeseed.co/">
+<meta property="og:title" content="ROME Seed Co. | Hemp Artisan Pasta — Made in Italy">
+<meta property="og:description" content="Regenerative seed-powered Italian pasta. Sicilian durum wheat and organic hemp seed flour, bronze-extruded and slow-dried in Italy.">
+<meta property="og:image" content="https://romeseed.co/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ROME Seed Co. — Seed-Powered. Chef-Crafted. Purpose-Driven.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ROME Seed Co. | Hemp Artisan Pasta — Made in Italy">
+<meta name="twitter:description" content="Regenerative seed-powered Italian pasta. Sicilian durum wheat and organic hemp seed flour, bronze-extruded and slow-dried in Italy.">
+<meta name="twitter:image" content="https://romeseed.co/assets/img/og-image.jpg">
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+<link rel="preload" as="image" href="/assets/img/hero.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --hemp:#2C4C34; --earth:#B9A58A; --cream:#F6EFE3; --steel:#5E676C; --black:#111111;
+  --gold:#C8A45E; --rust:#9C5234; --herb:#76A378;
+  --cream-deep:#EFE6D6;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--black);background:var(--cream);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--hemp);font-weight:600;line-height:1.1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+.dash-label{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--hemp)}
+.dash-label::before{content:"— ";}.dash-label::after{content:" —";}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:0;z-index:100;background:rgba(246,239,227,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(94,103,108,.18)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:78px}
+.nav-logo img{height:46px;display:block}
+.nav-links{display:flex;gap:38px;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;letter-spacing:.03em;color:var(--hemp);transition:opacity .2s}
+.nav-links a:hover{opacity:.6}
+.nav-cta{font-family:var(--sans);background:var(--hemp);color:var(--cream)!important;padding:11px 22px;border-radius:2px;font-size:13px;font-weight:600;letter-spacing:.04em}
+.nav-cta:hover{background:#21392a;opacity:1!important}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;color:var(--cream);overflow:hidden;padding:150px 0 150px;background:linear-gradient(rgba(28,46,33,.78),rgba(28,46,33,.82)),url('/assets/img/hero.jpg');background-size:cover;background-position:center}
+.hero::before{content:"";position:absolute;inset:0;background:
+   radial-gradient(circle at 78% 30%,rgba(200,164,94,.13),transparent 45%),
+   radial-gradient(circle at 15% 80%,rgba(118,163,120,.10),transparent 50%);}
+.hero-grain{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero .wrap{position:relative;z-index:2;max-width:900px}
+.hero .eyebrow{color:var(--gold);margin-bottom:26px;opacity:0;animation:rise .8s .1s forwards}
+.hero h1{color:var(--cream);font-size:clamp(46px,7vw,86px);font-weight:600;letter-spacing:-.01em;margin-bottom:28px;opacity:0;animation:rise .8s .25s forwards}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:20px;line-height:1.55;max-width:620px;color:rgba(246,239,227,.86);margin-bottom:42px;opacity:0;animation:rise .8s .4s forwards}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:rise .8s .55s forwards}
+.btn{font-family:var(--sans);display:inline-block;padding:16px 34px;border-radius:2px;font-size:14px;font-weight:600;letter-spacing:.05em;transition:all .25s;cursor:pointer}
+.btn-gold{background:var(--gold);color:var(--hemp)}
+.btn-gold:hover{background:#d6b878;transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(246,239,227,.5);color:var(--cream)}
+.btn-ghost:hover{background:rgba(246,239,227,.1);border-color:var(--cream)}
+.hero-tagline{margin-top:70px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(246,239,227,.65);opacity:0;animation:rise .8s .7s forwards}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---------- POSITIONING STRIP ---------- */
+.position{background:var(--cream);padding:90px 0;text-align:center}
+.position .wrap{max-width:880px}
+.position .dash-label{margin-bottom:24px;display:inline-block}
+.position h2{font-size:clamp(30px,4vw,46px);font-weight:500;line-height:1.22}
+.position h2 em{font-style:italic;color:var(--rust)}
+
+/* ---------- FOUR SKU BLOCK ---------- */
+.skus{padding:30px 0 100px;background:var(--cream)}
+.skus-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.skus-head .eyebrow{margin-bottom:16px;display:block}
+.skus-head h2{font-size:clamp(34px,4.5vw,52px);margin-bottom:18px}
+.skus-head p{color:var(--steel);font-size:18px}
+.sku-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.sku{border-radius:4px;overflow:hidden;position:relative;min-height:420px;display:flex;flex-direction:column;justify-content:space-between;padding:34px 28px;transition:transform .3s,box-shadow .3s;cursor:pointer}
+.sku:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(44,76,52,.18)}
+.sku-shape{height:130px;display:flex;align-items:center;justify-content:center;margin:20px 0}
+.sku-shape svg{height:100%;width:auto}
+.sku-name{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.05}
+.sku-desc{font-family:var(--serif);font-style:italic;font-size:26px;font-weight:600;margin-top:2px}
+.sku-vocation{font-size:13px;line-height:1.5;margin-top:14px;opacity:.85}
+.sku-macro{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:20px;padding-top:16px;border-top:1px solid currentColor;opacity:.7}
+.sku-tag{position:absolute;top:20px;right:20px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.12);padding:5px 10px;border-radius:2px}
+/* per-SKU theming per Style Guide 9.2 */
+.sku.penne{background:var(--cream-deep)}
+.sku.penne .sku-name,.sku.penne .sku-vocation,.sku.penne .sku-macro{color:var(--hemp)}
+.sku.penne .sku-desc{color:var(--hemp)}
+.sku.fusilli{background:var(--earth)}
+.sku.fusilli .sku-name,.sku.fusilli .sku-vocation,.sku.fusilli .sku-macro{color:var(--hemp)}
+.sku.fusilli .sku-desc{color:var(--rust)}
+.sku.linguine{background:var(--steel)}
+.sku.linguine .sku-name,.sku.linguine .sku-vocation,.sku.linguine .sku-macro{color:var(--cream)}
+.sku.linguine .sku-desc{color:#a9cda9}
+.sku.rigatoni{background:var(--hemp)}
+.sku.rigatoni .sku-name,.sku.rigatoni .sku-vocation,.sku.rigatoni .sku-macro{color:var(--cream)}
+.sku.rigatoni .sku-desc{color:var(--gold)}
+.sku-tag.cream{background:rgba(246,239,227,.18);color:var(--cream)}
+
+/* ---------- HEMP ADVANTAGE ---------- */
+.advantage{background:var(--hemp);color:var(--cream);padding:100px 0;position:relative;overflow:hidden}
+.advantage::after{content:"";position:absolute;right:-10%;top:-20%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(200,164,94,.12),transparent 70%)}
+.advantage .wrap{position:relative;z-index:2}
+.advantage .eyebrow{color:var(--gold);margin-bottom:20px;display:block}
+.advantage h2{color:var(--cream);font-size:clamp(32px,4.5vw,50px);max-width:680px;margin-bottom:14px}
+.advantage .lead{color:rgba(246,239,227,.82);font-size:19px;max-width:640px;margin-bottom:56px}
+.adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.adv-item{border-top:1px solid rgba(246,239,227,.25);padding-top:22px}
+.adv-num{font-family:var(--serif);font-size:46px;font-weight:600;color:var(--gold);line-height:1}
+.adv-num span{font-size:22px}
+.adv-label{font-size:14px;font-weight:600;margin-top:10px;letter-spacing:.02em}
+.adv-note{font-size:13px;color:rgba(246,239,227,.62);margin-top:6px;line-height:1.45}
+
+/* ---------- SPLIT / FOUNDER ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.split-img{background:linear-gradient(135deg,#3a5a42,#21392a);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.split-img .leafmark{opacity:.22;width:58%}
+.split-img .cap{position:absolute;bottom:28px;left:28px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,239,227,.7)}
+.split-txt{background:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:80px 70px}
+.split-txt .eyebrow{margin-bottom:20px}
+.split-txt h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:8px}
+.split-txt .equation{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--rust);margin-bottom:24px}
+.split-txt p{color:var(--steel);font-size:17px;margin-bottom:18px;max-width:480px}
+.split-txt .btn-text{font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--hemp);border-bottom:2px solid var(--gold);padding-bottom:3px;align-self:flex-start;margin-top:8px}
+
+/* ---------- FOODSERVICE BAND ---------- */
+.foodservice{background:var(--earth);padding:90px 0}
+.fs-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center}
+.foodservice .eyebrow{color:var(--hemp);margin-bottom:18px;display:block}
+.foodservice h2{font-size:clamp(30px,4vw,46px);margin-bottom:18px;color:var(--hemp)}
+.foodservice p{color:#5a4f3d;font-size:18px;max-width:520px;margin-bottom:18px}
+.fs-segs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.fs-seg{background:rgba(44,76,52,.1);color:var(--hemp);font-size:13px;font-weight:600;padding:8px 16px;border-radius:2px}
+.fs-card{background:var(--cream);border-radius:4px;padding:40px 36px;box-shadow:0 18px 44px rgba(44,76,52,.16)}
+.fs-card h3{font-size:26px;margin-bottom:10px}
+.fs-card p{font-size:15px;color:var(--steel);margin-bottom:24px}
+.fs-card .btn-gold{width:100%;text-align:center}
+
+/* ---------- WAITLIST ---------- */
+.waitlist{color:var(--cream);padding:120px 0;text-align:center;position:relative;overflow:hidden;background:linear-gradient(rgba(28,46,33,.86),rgba(17,17,17,.88)),url('/assets/img/waitlist.jpg');background-size:cover;background-position:center}
+.waitlist .wrap{max-width:620px;position:relative;z-index:2}
+.waitlist .dash-label{color:var(--gold);margin-bottom:22px;display:inline-block}
+.waitlist .dash-label::before,.waitlist .dash-label::after{color:var(--gold)}
+.waitlist h2{color:var(--cream);font-size:clamp(32px,4.5vw,50px);margin-bottom:16px}
+.waitlist p{color:rgba(246,239,227,.82);font-size:18px;margin-bottom:36px}
+.wl-form{display:flex;gap:12px;max-width:480px;margin:0 auto}
+.wl-form input{flex:1;padding:16px 20px;border:1px solid rgba(246,239,227,.3);background:rgba(246,239,227,.07);color:var(--cream);font-family:var(--sans);font-size:15px;border-radius:2px}
+.wl-form input::placeholder{color:rgba(246,239,227,.5)}
+.wl-note{font-size:13px;color:rgba(246,239,227,.55);margin-top:18px}
+
+/* ---------- FOOTER ---------- */
+.footer{background:var(--black);color:rgba(246,239,227,.7);padding:64px 0 36px}
+.foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;padding-bottom:42px;border-bottom:1px solid rgba(246,239,227,.14)}
+.foot-brand{max-width:300px}
+.foot-brand img{height:52px;margin-bottom:18px}
+.foot-brand .tg{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,239,227,.55)}
+.foot-cols{display:flex;gap:64px;flex-wrap:wrap}
+.foot-col h4{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.foot-col a{display:block;font-size:14px;margin-bottom:10px;color:rgba(246,239,227,.7);transition:color .2s}
+.foot-col a:hover{color:var(--cream)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:28px;font-size:12px;color:rgba(246,239,227,.45)}
+
+@media(max-width:980px){
+  .sku-grid{grid-template-columns:repeat(2,1fr)}
+  .adv-grid{grid-template-columns:repeat(2,1fr);gap:36px}
+  .split{grid-template-columns:1fr}.split-img{min-height:340px}
+  .fs-inner{grid-template-columns:1fr}
+  .nav-links a:not(.nav-cta){display:none}
+}
+@media(max-width:600px){
+  .wrap{padding:0 22px}
+  .sku-grid{grid-template-columns:1fr}
+  .adv-grid{grid-template-columns:1fr}
+  .wl-form{flex-direction:column}
+  .split-txt{padding:54px 30px}
+}
+
+/* photo-era additions */
+.adv-wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;align-items:center}
+.adv-photo{border-radius:4px;min-height:460px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.advantage h2{max-width:none}.advantage .lead{max-width:none}
+@media(max-width:980px){.adv-wrap{grid-template-columns:1fr}.adv-photo{min-height:300px}}
+/* heritage dual band */
+.heritage{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.her-cell{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:48px 46px;color:var(--cream)}
+.her-cell::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(17,17,17,.45) 55%,rgba(17,17,17,.85));z-index:1}
+.her-cell>*{position:relative;z-index:2}
+.her-cell .eyebrow{color:var(--gold);margin-bottom:12px;display:block}
+.her-cell h3{color:var(--cream);font-size:32px;margin-bottom:10px}
+.her-cell p{font-size:15px;color:rgba(246,239,227,.85);max-width:420px}
+@media(max-width:760px){.heritage{grid-template-columns:1fr}.her-cell{min-height:340px}}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-logo" href="#"><img src="/assets/img/logo-horizontal-hemp.png" alt="ROME Seed Co."></a>
+  <div class="nav-links">
+    <a href="#story">Our Story</a>
+    <a href="#shop">Shop</a>
+    <a href="#advantage">The Hemp Advantage</a>
+    <a href="#recipes">Recipes</a>
+    <a href="#foodservice">Foodservice</a>
+    <a href="#waitlist" class="nav-cta">Join the Waitlist</a>
+  </div>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero"><div class="hero-grain"></div><div class="wrap">
+  <span class="eyebrow">Regenerative · Seed-Powered · Made in Italy</span>
+  <h1>The supergrain pasta <em>you've been waiting for.</em></h1>
+  <p class="hero-sub">Made in Italy. Crafted by chefs. Sicilian heritage durum and organic hemp seed flour, bronze-extruded and slow-dried — with all the al dente bite Italian pasta has always been famous for.</p>
+  <div class="hero-ctas">
+    <a href="#shop" class="btn btn-gold">Explore the Pasta</a>
+    <a href="#foodservice" class="btn btn-ghost">For Foodservice & Wholesale</a>
+  </div>
+  <div class="hero-tagline">Seed-Powered. &nbsp;Chef-Crafted. &nbsp;Purpose-Driven.</div>
+</div></header>
+
+<!-- POSITIONING -->
+<section class="position"><div class="wrap">
+  <span class="dash-label">What's New in the Functional Foods Pantry</span>
+  <h2>The better-for-you pasta aisle has been a chickpea aisle for a decade. <em>ROME is the next chapter</em> — the only pasta that is at once a protein source, a fiber source, and a meaningful source of plant-derived omega-3.</h2>
+</div></section>
+
+<!-- FOUR SKUs -->
+<section class="skus" id="shop"><div class="wrap">
+  <div class="skus-head">
+    <span class="eyebrow">Hemp Artisan Foods by ROME</span>
+    <h2>One extraordinary blend. Four native shapes.</h2>
+    <p>The formulation is identical across the line. Each shape signals its culinary vocation — the way it's meant to be cooked and eaten.</p>
+  </div>
+  <div class="sku-grid">
+    <div class="sku penne">
+      <div class="sku-shape"><svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2.2"><g transform="rotate(-22 60 40)"><rect x="34" y="22" width="52" height="34" rx="3"/><line x1="34" y1="29" x2="86" y2="29"/><line x1="34" y1="49" x2="86" y2="49"/></g></svg></div><div><div class="sku-name">Penne</div><div class="sku-desc">Vitali</div>
+      <div class="sku-vocation">The daily engine. The most versatile of the four — the shape that meets the Tuesday-night table.</div></div>
+      <div class="sku-macro">[XX]g Protein · [X]g Fiber · Omega 3+6</div>
+    </div>
+    <div class="sku fusilli">
+      <div class="sku-shape"><svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M48 14 C72 22 48 34 72 42 C48 50 72 62 48 70" /><path d="M60 14 C84 22 60 34 84 42 C60 50 84 62 60 70" opacity=".55"/></svg></div><div><div class="sku-name">Fusilli</div><div class="sku-desc">Forte</div>
+      <div class="sku-vocation">The structure that captures. The spiral that holds the richest, most robust sauces.</div></div>
+      <div class="sku-macro">[XX]g Protein · [X]g Fiber · Omega 3+6</div>
+    </div>
+    <div class="sku rigatoni">
+      <span class="sku-tag cream">Premium · Foil</span>
+      <div class="sku-shape"><svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2.2"><g transform="rotate(-18 60 40)"><ellipse cx="44" cy="40" rx="9" ry="20"/><line x1="44" y1="20" x2="80" y2="20"/><line x1="44" y1="60" x2="80" y2="60"/><ellipse cx="80" cy="40" rx="9" ry="20"/><line x1="54" y1="30" x2="80" y2="30" opacity=".5"/><line x1="54" y1="50" x2="80" y2="50" opacity=".5"/></g></svg></div><div><div class="sku-name">Rigatoni</div><div class="sku-desc">Omega</div>
+      <div class="sku-vocation">The curated plate. Built for elaborate, healthful preparations and raw finishing oils.</div></div>
+      <div class="sku-macro">[XX]g Protein · [X]g Fiber · Omega 3+6</div>
+    </div>
+    <div class="sku linguine">
+      <div class="sku-shape"><svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="16" y1="26" x2="104" y2="26"/><line x1="16" y1="33" x2="104" y2="33"/><line x1="16" y1="40" x2="104" y2="40"/><line x1="16" y1="47" x2="104" y2="47"/><line x1="16" y1="54" x2="104" y2="54"/></svg></div><div><div class="sku-name">Spaghetti</div><div class="sku-desc">Integrale</div>
+      <div class="sku-vocation">The essence of tradition. For pure, light preparations that let the pasta speak.</div></div>
+      <div class="sku-macro">[XX]g Protein · [X]g Fiber · Omega 3+6</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- HEMP ADVANTAGE -->
+<section class="advantage" id="advantage"><div class="wrap adv-wrap"><div class="adv-photo" style="background:url('/assets/img/advantage.jpg');background-size:cover;background-position:center"></div><div class="adv-content">
+  <span class="eyebrow">The Hemp Advantage</span>
+  <h2>Hemp seed is the next supergrain. The science is defensible.</h2>
+  <p class="lead">Per 100g of hulled hemp seed, documented by USDA FoodData Central and peer-reviewed literature.</p>
+  <div class="adv-grid">
+    <div class="adv-item"><div class="adv-num">9</div><div class="adv-label">Essential amino acids</div><div class="adv-note">All nine, present in every serving.</div></div>
+    <div class="adv-item"><div class="adv-num">3<span>:1</span></div><div class="adv-label">Omega-6 to Omega-3</div><div class="adv-note">The ratio characterized as optimal for human health.</div></div>
+    <div class="adv-item"><div class="adv-num">167<span>%</span></div><div class="adv-label">Daily-value magnesium</div><div class="adv-note">A meaningful source per 100g hulled seed.</div></div>
+    <div class="adv-item"><div class="adv-num">GLA</div><div class="adv-label">Gamma-linolenic acid</div><div class="adv-note">One of the few dietary sources in the food supply.</div></div>
+  </div>
+</div></section>
+
+<!-- FOUNDER SPLIT -->
+<section class="split" id="story">
+  <div class="split-img" style="background:linear-gradient(rgba(44,76,52,.12),rgba(44,76,52,.30)),url('/assets/img/founder.jpg');background-size:cover;background-position:center">
+    <span class="cap">Boston, MA · Bronze-extruded in Italy</span>
+  </div>
+  <div class="split-txt">
+    <span class="eyebrow">Our Story</span>
+    <h2>The name is the founders.</h2>
+    <div class="equation">Roberto + Matthew = ROME</div>
+    <p>Two operators with backgrounds in hospitality, culinary science, and regenerative sourcing looked at the functional pasta category and saw a missing chapter. The legume pastas captured the protein conversation. Nobody had captured the conversation hemp seed nutrition science had been quietly waiting to have.</p>
+    <p>ROME is also, deliberately, the city where ancient grain and modern civilization first married — the first capital where pasta took its place at the center of the table.</p>
+    <a href="#" class="btn-text">Read the full story →</a>
+  </div>
+</section>
+
+
+<!-- HERITAGE / CRAFT DUAL BAND -->
+<section class="heritage">
+  <div class="her-cell" style="background:url('/assets/img/heritage-durum.jpg');background-size:cover;background-position:center">
+    <div><span class="eyebrow">Italian Heritage</span>
+    <h3>Sicilian durum, since the Bronze Age</h3>
+    <p>Heritage durum wheat cultivated for over four millennia, bronze-extruded and slow-dried the way Italian pasta has always been made well.</p></div>
+  </div>
+  <div class="her-cell" style="background:url('/assets/img/heritage-craft.jpg');background-size:cover;background-position:center">
+    <div><span class="eyebrow">Chef-Driven</span>
+    <h3>It begins in a kitchen, not a brief</h3>
+    <p>Every SKU originates in service and is validated at the pass before it is validated on a panel. Flavor leads. Nutrition substantiates.</p></div>
+  </div>
+</section>
+
+<!-- FOODSERVICE -->
+<section class="foodservice" id="foodservice"><div class="wrap fs-inner">
+  <div>
+    <span class="eyebrow">Foodservice & Wholesale</span>
+    <h2>Engineered for the operators who feed the populations who need it most.</h2>
+    <p>Premium Italian pasta with up to 3× the protein and a complete amino acid profile — bronze-extruded and slow-dried in Sicily. Built for protein density, IDDSI compatibility, allergen clarity, and the chef collateral your buyers expect.</p>
+    <div class="fs-segs">
+      <span class="fs-seg">Senior Living</span>
+      <span class="fs-seg">Healthcare</span>
+      <span class="fs-seg">Lifestyle Medicine</span>
+      <span class="fs-seg">K-12</span>
+      <span class="fs-seg">Higher Education</span>
+      <span class="fs-seg">Restaurants</span>
+    </div>
+  </div>
+  <div class="fs-card">
+    <h3>Request the operator kit</h3>
+    <p>Spec sheets, nutrition panels, case-pack details, and sourcing documentation — sent to your inbox.</p>
+    <a href="#" class="btn btn-gold">Start a Wholesale Inquiry</a>
+  </div>
+</div></section>
+
+<!-- WAITLIST -->
+<section class="waitlist" id="waitlist"><div class="hero-grain"></div><div class="wrap">
+  <span class="dash-label">Coming Soon</span>
+  <h2>Be first to the table.</h2>
+  <p>The first run of ROME Hemp Artisan pasta is in production. Join the waitlist and we'll notify you the moment it's available — plus a chef-developed recipe to start.</p>
+  <div class="wl-form">
+    <input type="email" placeholder="your@email.com" aria-label="Email address">
+    <a href="#" class="btn btn-gold">Notify Me</a>
+  </div>
+  <p class="wl-note">No spam. Just the launch, the recipes, and the occasional soil-to-table story.</p>
+</div></section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="wrap">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <img src="/assets/img/logo-horizontal-cream.png" alt="ROME Seed Co.">
+      <div class="tg">Seed-Powered. Chef-Crafted. Purpose-Driven.</div>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col"><h4>Shop</h4>
+        <a href="#">Penne Vitali</a><a href="#">Fusilli Forte</a><a href="#">Rigatoni Omega</a><a href="#">Spaghetti Integrale</a></div>
+      <div class="foot-col"><h4>Company</h4>
+        <a href="#">Our Story</a><a href="#">The Hemp Advantage</a><a href="#">Recipes</a><a href="#">Contact</a></div>
+      <div class="foot-col"><h4>Trade</h4>
+        <a href="#">Foodservice</a><a href="#">Wholesale Inquiry</a><a href="#">Spec Sheets</a></div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 ROME Seed Co. · 68 Harrison Ave, Ste. 605 #996459, Boston, MA 02111</span>
+    <span>Gluten-blended, not gluten-free · 100% Made in Italy</span>
+  </div>
+</div></footer>
+
+</body></html>
