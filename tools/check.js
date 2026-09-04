@@ -14,7 +14,7 @@ console.log('\nROME Seed Co. site — pre-flight\n');
 // 2. worker name must match the Cloudflare dashboard
 const wr=fs.readFileSync(path.join(R,'wrangler.jsonc'),'utf8');
 const nm=(wr.match(/"name"\s*:\s*"([^"]+)"/)||[])[1];
-nm==='romeseed-website'?ok('worker name: '+nm):bad('worker name is "'+nm+'", expected romeseed-website');
+nm==='romeseed-co'?ok('worker name: '+nm):bad('worker name is "'+nm+'", expected romeseed-co');
 /"directory"\s*:\s*"\.\/public"/.test(wr)?ok('assets directory'):bad('assets.directory is not ./public');
 
 // 3. links
