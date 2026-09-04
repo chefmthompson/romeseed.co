@@ -1,0 +1,12 @@
+# Legacy Squarespace paths -> homepage anchors
+/shop            /#shop            301
+/products        /#shop            301
+/about           /#story           301
+/our-story       /#story           301
+/story           /#story           301
+/the-hemp-advantage  /#advantage   301
+/hemp-advantage  /#advantage       301
+/foodservice     /#foodservice     301
+/recipes         /#recipes         301
+/contact         /#waitlist        301
+/waitlist        /#waitlist        301

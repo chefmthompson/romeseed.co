@@ -1,5 +1,6 @@
 {
-  // Worker name MUST match the name in the Cloudflare dashboard or the build fails.
+  // Worker name MUST match the name in the Cloudflare dashboard or the build
+  // lands in the wrong Worker. Dashboard project: romeseed-co
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "romeseed-co",
   "compatibility_date": "2026-08-30",

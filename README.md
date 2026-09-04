@@ -1,268 +1,126 @@
 # ROME Seed Co. Website
 
-Static marketing website for ROME Seed Co., built on Cloudflare Workers and deployed via GitHub.
+Static marketing site for ROME Seed Co., served from Cloudflare Workers static assets and deployed from this repo on every push to `main`.
 
-**Live at:** https://romeseed.co
+**Live:** https://romeseed.co
+**Staging:** https://romeseed-co.chef-mthompson.workers.dev
+**Worker:** `romeseed-co`
 
 ---
 
 ## Stack
 
-| Component | Technology | Why |
-|-----------|-----------|-----|
-| **Hosting** | Cloudflare Workers | Free static assets, fast global CDN, < 1 min deploys |
-| **Source** | GitHub (this repo) | Version history, branch-based workflow |
-| **Deploy** | Cloudflare Pages + GitHub integration | Auto-deploy on push to `main` |
-| **Domain DNS** | Cloudflare | Security headers, email auth (MX/SPF/DKIM/DMARC) |
-| **Forms** | HubSpot embedded forms | CRM integration for contact/appointments |
+| Layer | What | Notes |
+|---|---|---|
+| Hosting | Cloudflare Workers (static assets) | No build step, no server code |
+| Source | GitHub — `chefmthompson/romeseed.co` | Push to `main` = deploy |
+| Deploy | Workers Builds → `npx wrangler deploy` | ~60 seconds |
+| DNS | Cloudflare | MX/SPF/DKIM/DMARC for Google Workspace |
+| Fonts | Google Fonts (Cormorant Garamond, Inter) | Only third-party request |
+
+There is no cart, checkout, or CMS. This is a single-page marketing site with a waitlist anchor. That is deliberate — ROME does not take online orders yet.
 
 ---
 
-## Directory Structure
+## Structure
 
 ```
 public/
-├── index.html                 # Homepage
-├── about.html                 # About page
-├── our-story.html             # Story page
-├── the-hemp-advantage.html    # Product positioning
-├── foodservice.html           # B2B page
-├── recipes.html               # Content/recipes
-├── contact.html               # Contact page
-├── appointments.html          # Booking page
-├── shop/                      # Product pages (if e-commerce enabled)
-├── 404.html                   # Not found page
-├── robots.txt                 # SEO
-├── sitemap.xml                # SEO sitemap
-├── _headers                   # Security headers & cache rules
-├── _redirects                 # URL redirects
-└── assets/
-    ├── css/
-    │   └── site.css          # Main stylesheet (no-cache)
-    ├── js/
-    │   └── nav.js            # Navigation script (no-cache)
-    ├── fonts/                # Self-hosted woff2 fonts
-    └── img/                  # All images (self-hosted, immutable)
+├── index.html                  # the homepage (~26KB)
+├── 404.html                    # branded not-found page
+├── favicon.ico
+├── robots.txt
+├── sitemap.xml
+├── _headers                    # security headers + cache policy
+├── _redirects                  # legacy Squarespace paths -> anchors
+└── assets/img/
+    ├── hero.jpg                # hero background
+    ├── waitlist.jpg            # waitlist band background
+    ├── advantage.jpg           # hemp advantage photo
+    ├── founder.jpg             # founder split photo
+    ├── heritage-durum.jpg      # heritage band, left
+    ├── heritage-craft.jpg      # heritage band, right
+    ├── logo-horizontal-hemp.png    # nav lockup (light grounds)
+    ├── logo-horizontal-cream.png   # footer lockup (dark grounds)
+    ├── logo-vertical-hemp.png      # brand asset
+    ├── logo-vertical-cream.png     # brand asset
+    ├── og-image.jpg            # 1200x630 social card
+    ├── favicon-32.png
+    ├── apple-touch-icon.png
+    └── icon-512.png
 
-tools/
-└── check.js                   # Pre-flight verification script
+tools/check.js                  # pre-flight validation
+wrangler.jsonc                  # Worker name + assets dir
 ```
 
 ---
 
-## Setup
-
-### 1. Prerequisites
-
-- Node.js 18+ and npm
-- GitHub account with repo access
-- Cloudflare account (free tier)
-
-### 2. Install dependencies
+## Working on it
 
 ```bash
-npm install
+npm install        # once
+npm run check      # validate before every push
+npm run dev        # preview at localhost:8787
 ```
 
-This installs Wrangler v4, the Cloudflare deployment CLI.
+`npm run check` must pass before you push. It verifies required files exist, the Worker name matches Cloudflare, every local reference resolves (including `url()` inside inline CSS), images are not re-embedded as base64, the CSP permits the fonts the page loads, and there are no stale Squarespace or Rooted Impact references.
 
-### 3. Run pre-flight checks
-
-Before every push:
+### Deploying
 
 ```bash
-npm run check
+git add .
+git commit -m "Update <what changed>"
+git push origin main
 ```
 
-This verifies:
-- ✓ All required files exist
-- ✓ Worker name matches Cloudflare
-- ✓ No broken internal links
-- ✓ Sitemap includes all pages
-- ✓ No stale domain references
+Cloudflare rebuilds automatically. Check **Workers & Pages → romeseed-co → Deployments**, then hard-reload (Cmd+Shift+R).
 
-### 4. Local development
-
-To preview the site locally:
-
-```bash
-npm run dev
-```
-
-Opens http://localhost:8787 (Wrangler's dev server)
+For small copy edits you can skip the terminal: edit the file on github.com, commit to `main`, done.
 
 ---
 
-## Deployment Workflow
+## Brand tokens
 
-### Push to main = auto-deploy (via Cloudflare Pages)
+Defined in the `:root` block at the top of `index.html`:
 
-1. Make changes to `public/` folder
-2. Commit and push to `main`:
-   ```bash
-   git add public/
-   git commit -m "Update [page/section]"
-   git push origin main
-   ```
-3. Cloudflare Pages detects the push
-4. Site deploys in ~60 seconds
-5. Live at https://romeseed.co
+| Token | Hex | Use |
+|---|---|---|
+| `--hemp` | `#2C4C34` | Primary green |
+| `--earth` | `#B9A58A` | Regenerative earth |
+| `--cream` | `#F6EFE3` | Pasta cream ground |
+| `--steel` | `#5E676C` | Body text, secondary |
+| `--black` | `#111111` | Seed black |
+| `--gold` | `#C8A45E` | Omega gold, CTAs |
+| `--rust` | `#9C5234` | Terra rust accent |
+| `--herb` | `#76A378` | Fresh herb green |
 
-### For non-technical updates
-
-Use GitHub's web editor (no terminal needed):
-- Go to github.com → navigate to a file → pencil icon → edit → commit to `main`
-
-### After CSS or font changes
-
-Hard-reload in browser: **Cmd+Shift+R** (macOS) or **Ctrl+Shift+R** (Windows/Linux)
+Type: Cormorant Garamond (headlines), Inter (body).
 
 ---
 
-## Security & Performance
+## Caching
 
-### Cache Strategy
+| Path | Policy | Why |
+|---|---|---|
+| `/assets/img/*` | `immutable`, 1 year | Rename the file to bust it |
+| `/assets/fonts/*` | `immutable`, 1 year | Same |
+| `/favicon.ico` | 7 days | Rarely changes |
+| `/assets/css/*`, `/assets/js/*` | `no-cache` | Revalidates each request |
+| HTML | `no-cache` | Always revalidates; unchanged pages return 304 |
 
-| File Type | Cache Rule | Why |
-|-----------|-----------|-----|
-| Fonts (woff2) | immutable, 1 year | Never change, aggressive cache |
-| Images (jpg, png) | immutable, 1 year | Stable content |
-| CSS, JS | no-cache | Check with server; fetch if changed |
-| HTML | no-cache | Always check for updates |
-
-See `public/_headers` for details.
-
-### Content Security Policy
-
-All external resources are whitelisted in `_headers`:
-- HubSpot forms allowed (js.hsforms.net)
-- No inline scripts (except `unsafe-inline` CSS for performance)
-- No external images (all self-hosted)
-
-### Email Security
-
-MX records, SPF, DKIM, and DMARC are configured in Cloudflare DNS.
-All email (matthew@, roberto@) flows through Google Workspace.
+Images are stored as real files rather than base64 in the HTML. That keeps `index.html` at ~26KB instead of 1.5MB and lets the images cache for a year.
 
 ---
 
-## Editing Content
+## Known gaps
 
-### Pages
-
-Edit any `.html` file in `public/`:
-
-```bash
-# Example: Edit about page
-public/about.html
-```
-
-### Styles
-
-Main stylesheet:
-```bash
-public/assets/css/site.css
-```
-
-No build step — CSS changes are live after commit.
-
-### Images
-
-1. Optimize image (JPEG quality, reduce file size)
-2. Save to `public/assets/img/`
-3. Reference in HTML:
-   ```html
-   <img src="/assets/img/example.jpg" alt="Description">
-   ```
-4. Commit and push
-
-### Navigation
-
-JavaScript for mobile nav:
-```bash
-public/assets/js/nav.js
-```
-
----
-
-## Troubleshooting
-
-### Site not updating after push?
-
-1. Check Cloudflare Pages → Deployments tab (any build errors?)
-2. Confirm you pushed to `main` (not a side branch)
-3. Hard-reload browser: Cmd+Shift+R
-4. Wait 60 seconds for deploy to finish
-
-### Old images still showing?
-
-- Images have a 1-year cache
-- Hard-reload: Cmd+Shift+R
-- Or rename the image file and update the reference
-
-### CSS not applying?
-
-- CSS has no-cache, so should update quickly
-- Hard-reload: Cmd+Shift+R
-- Verify `public/assets/css/site.css` exists
-
-### Link returns 404?
-
-Run `npm run check` to find broken links:
-```bash
-npm run check
-```
-
-Check the output — it will tell you which links are broken.
-
-### Form submissions not working?
-
-- Verify HubSpot form embed code is in the HTML
-- Check Cloudflare's `_headers` file for HubSpot CSP rules
-- Test in incognito/private mode (no browser extensions)
-
----
-
-## Domain & DNS
-
-**Domain Registrar:** Google Domains (legacy Squarespace-managed)  
-**DNS Provider:** Cloudflare
-
-**Nameservers:**
-- ns-123.cloudflare.com (example; check Cloudflare dashboard for actual values)
-- ns-456.cloudflare.com
-
-**MX Records:** Google Workspace (5 records)  
-**SPF:** `v=spf1 include:_spf.google.com ~all`  
-**DMARC:** `v=DMARC1; p=quarantine; rua=mailto:matthew@romeseed.co`
-
----
-
-## Performance Metrics
-
-Target metrics (Phase 5 verification):
-- **Every page:** 200 HTTP response
-- **Third-party requests:** Exactly 1 (HubSpot form script)
-- **Lighthouse:** 90+ on Performance, Accessibility, Best Practices, SEO
-
-Test with:
-```bash
-npm run check
-```
-
-And use Chrome DevTools → Network tab to verify third-party requests.
+- **SKU macros are placeholders.** All four products show `[XX]g Protein · [X]g Fiber`. Replace with the real nutrition panel values before launch — `npm run check` warns until you do.
+- **The waitlist button has no form behind it.** It scrolls to the `#waitlist` anchor. Wiring HubSpot is a follow-up; the CSP in `_headers` already permits it.
+- **Nav links are anchors, not pages.** Our Story, Shop, Recipes, Foodservice all scroll within the homepage. `_redirects` maps the old Squarespace paths to those anchors so inbound links don't 404.
 
 ---
 
 ## Contacts
 
-**Site Owner:** Matthew Thompson (matthew@romeseed.co)  
-**Co-founder:** Roberto Cristiano (roberto@romeseed.co)  
-**Hosting/Infrastructure:** Cloudflare  
-**Design/Development:** Claude
-
----
-
-## Version History
-
-- **v1.0.0** (Sep 2026) – Initial Cloudflare migration from Squarespace
+Matthew Thompson — matthew@romeseed.co
+Roberto Cristiano — roberto@romeseed.co

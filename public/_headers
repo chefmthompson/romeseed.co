@@ -1,28 +1,31 @@
 /*
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' https://js.hsforms.net; connect-src 'self' https://*.hsforms.com https://*.hsforms.net; frame-src 'self' https://js.hsforms.net; form-action 'self' https://*.hsforms.com; frame-ancestors 'self'; base-uri 'self'
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
-  X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self' https://*.hsforms.com; frame-ancestors 'self'; img-src 'self' data: https://*.hsforms.com https://*.hubspot.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://js.hsforms.net https://*.hsforms.net; connect-src 'self' https://*.hsforms.com https://*.hubapi.com; frame-src https://*.hsforms.net https://*.hsforms.com; object-src 'none'; upgrade-insecure-requests
+
+# Fonts and images never change once published — cache hard.
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
 
 /assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
-/assets/img/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/site.css
-  Cache-Control: no-cache
-
-/assets/fonts.css
-  Cache-Control: no-cache
-
-/assets/nav.js
-  Cache-Control: no-cache
-
-/ds/*
-  Cache-Control: no-cache
-
-/assets/*.png
+/favicon.ico
   Cache-Control: public, max-age=604800
+
+# CSS and JS revalidate so edits go live on the next request.
+/assets/css/*
+  Cache-Control: public, no-cache
+
+/assets/js/*
+  Cache-Control: public, no-cache
+
+# HTML always revalidates; unchanged pages still return a cheap 304.
+/*.html
+  Cache-Control: public, no-cache
+
+/
+  Cache-Control: public, no-cache
